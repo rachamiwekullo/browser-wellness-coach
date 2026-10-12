@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A browser-based rule-driven daily wellness check-in demo.">
+    <title>Daily Wellness Coach</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">AI MASTERCLASS · JAVASCRIPT MINI-PROJECT</p>
+        <h1>Daily Wellness Coach</h1>
+        <p class="intro">A simple rule-based check-in using sleep, water, and steps.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="checkin-title">
+        <h2 id="checkin-title">Your day</h2>
+        <form id="coach-form">
+          <label for="sleep">Sleep (hours)</label>
+          <input id="sleep" name="sleep" type="number" min="0" max="24" step="0.1" required>
+          <label for="water">Water (glasses)</label>
+          <input id="water" name="water" type="number" min="0" max="30" step="1" required>
+          <label for="steps">Steps</label>
+          <input id="steps" name="steps" type="number" min="0" max="100000" step="1" required>
+          <button type="submit">Get today's check-in</button>
+        </form>
+        <div id="result" class="result" role="status" aria-live="polite">
+          Add your daily numbers to see a score and suggestion.
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="history-title">
+        <div class="history-heading">
+          <h2 id="history-title">This session</h2>
+          <button id="clear-history" class="secondary" type="button">Clear history</button>
+        </div>
+        <p id="empty-state">No check-ins yet.</p>
+        <div class="table-scroll">
+          <table id="history-table" hidden>
+            <thead>
+              <tr><th>Time</th><th>Sleep</th><th>Water</th><th>Steps</th><th>Score</th><th>Result</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+      <p class="disclaimer">Practice project only. Scores and suggestions are not health advice.</p>
+    </main>
+  </body>
+</html>
